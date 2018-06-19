@@ -5,12 +5,6 @@ using namespace std;
 
 int main()
 {
-	//int a, b, result;
-	//while (cin >> a >> b)
-	//{
-	//	result = Add(a, b);
-	//	cout << "Result : " << result << endl;
-	//}
 	int re,c = -214747;
 	unsigned char *signcert;
 	unsigned char *signdata;
@@ -20,15 +14,11 @@ int main()
 	unsigned char signdata1[128] = "";
 	unsigned char hashdata[45] = "";
 	unsigned char picdata[10240] = ""; 
-	unsigned char ora[] = "Íõ¼ÑÄş43.¡£}q";
+	unsigned char ora[] = "ÃÃµÂ¼Ã‘Ã„Ã¾43.Â¡Â£}q";
 	re = InitKey();
 	re = SelectCert();
 	signcert = GetSignCert();
 	subject = GetSubject();
-	//signdata = Sign(ora);
-	//c = strlen((const char*)signdata);
-	//memcpy(signdata1, signdata, c);
-	//printf("%s\n", signdata1);
 	hash = Sm3Hash(ora);
 	c = strlen((const char*)hash);
 	memcpy(hashdata, hash, c);
